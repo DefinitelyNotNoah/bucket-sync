@@ -19,6 +19,10 @@ Its core purpose is to allow for instanced zones using FiveM's routing bucket sy
 * Blackout
 * Friendly Fire
 
+### 📝 Install
+* Drop `bucketsync` into your resource directory.
+* Add `ensure bucketsync` to your server.cfg file.
+
 ## Client Events
   Events follow the format `[RESOURCE_NAME]-[CLIENT/SERVER]:[EVENT_NAME]`
 
