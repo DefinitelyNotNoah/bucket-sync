@@ -123,7 +123,7 @@ end, true)
 ```
 
 ## Showcase
-
+[![View Video](https://i.ibb.co/RkmV0gxT/p8vj04.jpg)](https://streamable.com/p8vj04)
 
 ## Note
 This resource has not been tested for production, or large scale servers. Performance metrics are unknown.
