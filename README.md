@@ -18,7 +18,7 @@ Its core purpose is to allow for instanced zones using FiveM's routing bucket sy
 * ✅ Time Scale
 * ✅ Blackout
 * ✅ Friendly Fire
-* ❌ Night Vision
+* ❌ Timecycle
 
 ### 📝 Install
 * Drop `bucketsync` into your resource directory.
