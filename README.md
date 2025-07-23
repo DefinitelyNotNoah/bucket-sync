@@ -12,7 +12,7 @@ Its core purpose is to allow for instanced zones using FiveM's routing bucket sy
 
  * **Anti-Tampering**: BucketSync includes a built-in integrity check that ensures players remain in their assigned routing bucket, preventing them from going into other buckets unauthorized, or tampering with environment values that differ from what is set on server-side. A main loop on the server periodically sends state data to clients in each bucket via a VerifyIntegrity event, ensuring everyone stays synchronized.
 
-### 🌦️ Synced States
+### 🌦️ Synced States (❌ = TODO)
 * ✅ Weather
 * ✅ Time
 * ✅ Time Scale
