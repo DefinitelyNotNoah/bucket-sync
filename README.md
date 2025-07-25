@@ -21,6 +21,7 @@ Its core purpose is to allow for instanced zones using FiveM's routing bucket sy
 * ❌ Timecycle
 
 ### 📝 Install
+* Download [Latest Release](https://github.com/DefinitelyNotNoah/bucket-sync/releases/)
 * Drop `bucketsync` into your resource directory.
 * Add `ensure bucketsync` to your server.cfg file.
 
