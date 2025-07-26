@@ -92,21 +92,18 @@ The entire resource is built around the concept of global states, which are stor
 Each bucket in BucketSync is represented as an object with the following properties:
 ```json
 {
-    "bucket": 0,
-    "population": 0,
-    "lockdownMode": "inactive",
-    "time": {
+    "FriendlyFire": false
+    "Time": {
         "hour": 12,
         "minute": 0,
         "second": 0
     },
-    "weatherType": "EXTRASUNNY",
-    "timeScale": 1.0,
-    "blackout": {
-        "allLights": false,
+    "Weather": "EXTRASUNNY",
+    "TimeScale": 1.0,
+    "Blackout": {
+        "all": false,
         "vehicleLights": false
     },
-    "friendlyFire": false
 }
 ```
 
