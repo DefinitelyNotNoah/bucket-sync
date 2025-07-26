@@ -85,11 +85,6 @@ RegisterCommand('initbucket', function(source, args, raw)
     BucketManager:initBucket(bucket, lockdown)
 end, false)
 
-RegisterCommand('totalbuckets', function(source, args, raw)
-    local initializedBuckets = GlobalState['Sync-GlobalState:InitializedBuckets'] or {}
-    print('Total initialized buckets: ' .. #initializedBuckets)
-end, false)
-
 -- Bucket Lockdown Command
 RegisterCommand('setbucketlockdown', function(source, args, raw)
     local bucket = tonumber(args[1])
