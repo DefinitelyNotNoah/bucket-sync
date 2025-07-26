@@ -64,7 +64,7 @@ You will mainly be executing server events. Client events are executed inside Sy
 **`Sync-ServerEvent:SetTimeScale [bucket: int] [amount float]`**  
 > Sets the time scale on a routing bucket. Any value less than 1.0 will slow the game down for every client inside the bucket. No change will occur with values past 1.0. Minimum is 0.0.
 
-**`Sync-ServerEvent:Blackout [bucket: int] [allLights: boolean] [includeVehicleLights: boolean]`**  
+**`Sync-ServerEvent:SetBlackout [bucket: int] [allLights: boolean] [includeVehicleLights: boolean]`**  
 > Sets blackout condition on a routing bucket. Will turn of all lights for all clients in-game.
 
 **`Sync-ServerEvent:SetFriendlyFire [bucket: int] [condition: boolean]`**  
