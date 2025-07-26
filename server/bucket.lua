@@ -14,15 +14,7 @@ for _, state in ipairs(StateManager:getStateManagers()) do
 end
 
 function BucketManager:initBucket(bucket, lockdown)
-    if lockdown == 'relaxed' or lockdown == 'strict' or lockdown == 'inactive' then
-        SetRoutingBucketEntityLockdownMode(bucket, lockdown) -- lockdown
-    else
-        print('Invalid lockdown mode specified.')
-        return
-    end
-
     print('Initializing Bucket ' .. bucket)
-    print('Setting lockdown mode: ' .. lockdown)
 
     -- If the bucket already exists, return
     if GlobalState['Sync-GlobalState:Bucket' .. bucket] then
@@ -44,6 +36,14 @@ function BucketManager:initBucket(bucket, lockdown)
 
     -- Initialize Bucket
     GlobalState:set('Sync-GlobalState:Bucket' .. bucket, true)
+
+    if lockdown == 'relaxed' or lockdown == 'strict' or lockdown == 'inactive' then
+        SetRoutingBucketEntityLockdownMode(bucket, lockdown) -- lockdown
+        print('Setting lockdown mode: ' .. lockdown)
+    else
+        print('Invalid lockdown mode specified.')
+        return
+    end
 
     -- Set default values for the bucket
     for _, state in ipairs(states) do
@@ -83,6 +83,11 @@ RegisterCommand('initbucket', function(source, args, raw)
     end
 
     BucketManager:initBucket(bucket, lockdown)
+end, false)
+
+RegisterCommand('totalbuckets', function(source, args, raw)
+    local initializedBuckets = GlobalState['Sync-GlobalState:InitializedBuckets'] or {}
+    print('Total initialized buckets: ' .. #initializedBuckets)
 end, false)
 
 -- Bucket Lockdown Command

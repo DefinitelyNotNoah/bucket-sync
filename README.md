@@ -86,6 +86,49 @@ Commands that were made for testing.
 **`setbucket [playerId: int] [bucket: int]`**  
 > Assigns a client's routing bucket to the bucket provided.
 
+## Global States
+The entire resource is built around the concept of global states, which are stored in a global state bag. This allows for easy access to the current state of all routing buckets and their properties, as well as prioritize data integrity across resource restarts.  
+
+Each bucket in BucketSync is represented as an object with the following properties:
+```json
+{
+    "bucket": 0,
+    "population": 0,
+    "lockdownMode": "inactive",
+    "time": {
+        "hour": 12,
+        "minute": 0,
+        "second": 0
+    },
+    "weatherType": "EXTRASUNNY",
+    "timeScale": 1.0,
+    "blackout": {
+        "allLights": false,
+        "vehicleLights": false
+    },
+    "friendlyFire": false
+}
+```
+
+Developers will only need to worry about the `Sync-GlobalState:InitializedBuckets` state to find the total amount of buckets that have been initialized through the server's runtime. Every other GlobalState will lack documentation since it's meant to be used internally by the resource. However, feel free to view the source code to see how the resource uses the global states.
+
+**`Sync-GlobalState:InitializedBuckets`**  
+Holds an integer array of all initialized buckets e.g. [0, 1, 2, 3, 4]
+```lua
+-- Lua
+local initializedBuckets = GlobalState['Sync-GlobalState:InitializedBuckets'] or {}
+print('Total initialized buckets: ' .. #initializedBuckets)
+```
+```cs 
+// C#
+object[] buckets = StateBag.Global.Get("Sync-GlobalState:InitializedBuckets");
+if (buckets != null)
+{
+    Debug.WriteLine("Bucket Length: " + buckets.Length);
+}
+```
+
+## Example Resource
 An server-side lua file demonstrating usage has been provided at `example/command-test.lua`
 ```lua
 RegisterCommand('settime', function(source, args, raw)
