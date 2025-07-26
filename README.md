@@ -120,7 +120,7 @@ local initializedBuckets = GlobalState['Sync-GlobalState:InitializedBuckets'] or
 print('Total initialized buckets: ' .. #initializedBuckets)
 ```
 ```cs 
-// C#
+// C# Mono v2
 object[] buckets = StateBag.Global.Get("Sync-GlobalState:InitializedBuckets");
 if (buckets != null)
 {
