@@ -31,21 +31,6 @@ Its core purpose is to allow for instanced zones using FiveM's routing bucket sy
 **`Sync-ClientEvent:VerifyIntegrity`**  
 > Sends server data to clients to synchronize their environment to the values the server has set.
 
-**`Sync-ClientEvent:SetTime [hour: int] [minute: int] [second: int]`**  
-> Sets the client time
-
-**`Sync-ClientEvent:SetWeather [weatherType: string]`**  
-> Sets the client weather. View weather types here https://docs.fivem.net/natives/?_0x29B487C359E19889
-
-**`Sync-ClientEvent:SetTimeScale [amount: float]`**  
-> Sets the time scale for a client. Any value less than 1.0 will slow the game down. No change will occur with values past 1.0. Minimum is 0.0.
-
-**`Sync-ClientEvent:SetBlackout [allLights: boolean] [includeVehicleLights: boolean]`**  
-> Sets blackout condition for client. Will turn off all the lights in-game.
-
-**`Sync-ClientEvent:SetFriendlyFire [condition: boolean]`**  
-> Set friendly-fire option for client.
-
 ## Server Events
 You will mainly be executing server events. Client events are executed inside Sync-ClientEvent:VerifyIntegrity on a 2-second interval server-side. Meaning that no matter what client events get executed, it'll always be overridden by server-side state after 2 seconds.
 
