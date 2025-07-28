@@ -111,7 +111,7 @@ if (buckets != null)
 ```
 
 ## Example Resource
-An server-side lua file demonstrating usage has been provided at `example/command-test.lua`
+A server-side lua file demonstrating usage has been provided at `example/command-test.lua`
 ```lua
 RegisterCommand('settime', function(source, args, raw)
     local bucket = args[1]
